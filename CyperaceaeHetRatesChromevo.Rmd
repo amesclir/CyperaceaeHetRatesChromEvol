@@ -1,0 +1,55 @@
+---
+title: "CyperaceaeHetRatesChromEvol"
+author: "Marcial Escudero"
+date: '2022-11-07'
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(ape)
+library(phytools)
+
+mytree <- read.tree(file = "Cyperaceae.tree")
+cn <- read.csv(file = "Cyperaceae.csv.txt", sep = ";")
+mytree
+cn
+cn <- as.numeric(cn[,2])
+## 0. format output
+  pdf('./CyperaceaeHetRatesChromEvol.pdf', 6.69, 8.86)
+ 
+    par(mar = c(0.1, 0.1, 0.1, 0.1))
+    
+
+## 1. plot phylogeny
+
+#plot(mytree, show.tip.label = F, edge.color=  cex=1,font=3,lwd=0.5,label.offset = 1.)
+    
+## 2. Paint branches
+mytree<-paintSubTree(mytree, node=as.numeric(findMRCA(mytree, tips=c("Carex_microglochin","Cyperus_cyperoides"), type=c("node"))),stem=1,state=2)
+
+mytree<-paintSubTree(mytree,node=as.numeric(findMRCA(mytree, tips=c("Bulbostylis_ciliatifolia","Cyperus_cyperoides"), type=c("node"))),stem=0.2,state=3)
+
+mytree<-paintSubTree(mytree,node=as.numeric(findMRCA(mytree, tips=c("Carex_microglochin","Carex_gibba"), type=c("node"))),stem=0.2,state=4)
+
+mytree<-paintSubTree(mytree,node=as.numeric(findMRCA(mytree, tips=c("Cyperus_compressus","Cyperus_cyperoides"), type=c("node"))),stem=0.2,state=5)
+plotSimmap(mytree,type = "fan", fsize = 0.001, pts=F,lwd=1)
+
+## 3. add chromosome number
+phydataplot(
+  cn/10, 
+  mytree, "s",
+  offset = 0.015)
+
+### 4. Adding info sihfts in chromosome rates
+nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_longifructus","Carex_erebus"), type=c("node"))), pch =21, col= 'orange', bg = 'orange', cex = 1)
+nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Kyllingiella_microcephala","Cyperus_cuspidatus"), type=c("node"))), pch =21, col= 'cyan', bg = 'cyan', cex = 1)
+nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_microglochin","Carex_gibba"), type=c("node"))), pch =21, col= 'blue', bg = 'blue', cex = 1)
+
+nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_hystericina","Carex_saxatilis"), type=c("node"))), pch =21, col= 'cyan', bg = 'cyan', cex = 1)
+
+
+## 99. close graphics device
+dev.off()```
+
