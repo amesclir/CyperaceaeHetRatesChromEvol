@@ -17,7 +17,7 @@ mytree
 cn
 cn <- as.numeric(cn[,2])
 ## 0. format output
-  pdf('./CyperaceaeHetRatesChromEvol.pdf', 6.69, 8.86)
+  pdf('./CyperaceaeHetRatesChromEvol2.pdf', 6.69, 8.86)
  
     par(mar = c(0.1, 0.1, 0.1, 0.1))
     
@@ -33,8 +33,13 @@ mytree<-paintSubTree(mytree,node=as.numeric(findMRCA(mytree, tips=c("Bulbostylis
 
 mytree<-paintSubTree(mytree,node=as.numeric(findMRCA(mytree, tips=c("Carex_microglochin","Carex_gibba"), type=c("node"))),stem=0.2,state=4)
 
-mytree<-paintSubTree(mytree,node=as.numeric(findMRCA(mytree, tips=c("Cyperus_compressus","Cyperus_cyperoides"), type=c("node"))),stem=0.2,state=5)
+mytree<-paintSubTree(mytree,node=as.numeric(findMRCA(mytree, tips=c("Kyllingiella_microcephala","Cyperus_cuspidatus"), type=c("node"))),stem=0.2,state=5)
+
+mytree<-paintSubTree(mytree,node=as.numeric(findMRCA(mytree, tips=c("Cyperus_compressus","Cyperus_cyperoides"), type=c("node"))),stem=0.2,state=6)
+
+mytree<-paintSubTree(mytree,node=as.numeric(findMRCA(mytree, tips=c("Carex_longifructus","Carex_erebus"), type=c("node"))),stem=0.2,state=7)
 plotSimmap(mytree,type = "fan", fsize = 0.001, pts=F,lwd=1)
+
 
 ## 3. add chromosome number
 phydataplot(
@@ -47,9 +52,12 @@ nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_longifructus","Carex
 nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Kyllingiella_microcephala","Cyperus_cuspidatus"), type=c("node"))), pch =21, col= 'cyan', bg = 'cyan', cex = 1)
 nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_microglochin","Carex_gibba"), type=c("node"))), pch =21, col= 'blue', bg = 'blue', cex = 1)
 
-nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_hystericina","Carex_saxatilis"), type=c("node"))), pch =21, col= 'cyan', bg = 'cyan', cex = 1)
+#nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_hystericina","Carex_saxatilis"), type=c("node"))), pch =21, col= 'cyan', bg = 'cyan', cex = 1)
 
 
 ## 99. close graphics device
-dev.off()```
+dev.off()
+
+
+```
 
