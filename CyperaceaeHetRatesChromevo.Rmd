@@ -17,7 +17,7 @@ mytree
 cn
 cn <- as.numeric(cn[,2])
 ## 0. format output
-  pdf('./CyperaceaeHetRatesChromEvol2.pdf', 6.69, 8.86)
+  pdf('./CyperaceaeHetRatesChromEvol3.pdf', 6.69, 8.86)
  
     par(mar = c(0.1, 0.1, 0.1, 0.1))
     
@@ -45,12 +45,20 @@ plotSimmap(mytree,type = "fan", fsize = 0.001, pts=F,lwd=1)
 phydataplot(
   cn/10, 
   mytree, "s",
-  offset = 0.015)
+  offset = 0.5, col = "grey")
 
 ### 4. Adding info sihfts in chromosome rates
-nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_longifructus","Carex_erebus"), type=c("node"))), pch =21, col= 'orange', bg = 'orange', cex = 1)
-nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Kyllingiella_microcephala","Cyperus_cuspidatus"), type=c("node"))), pch =21, col= 'cyan', bg = 'cyan', cex = 1)
-nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_microglochin","Carex_gibba"), type=c("node"))), pch =21, col= 'blue', bg = 'blue', cex = 1)
+nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_longifructus","Carex_erebus"), type=c("node"))), pch =21, col= '#F5C710', bg = '#F5C710', cex = 1)
+nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Kyllingiella_microcephala","Cyperus_cuspidatus"), type=c("node"))), pch =24, col= '#28E2E5', bg = '#28E2E5', cex = 1)
+nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_microglochin","Carex_gibba"), type=c("node"))), pch =23, col= '#2297E6', bg = '#2297E6', cex = 1)
+
+nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_microglochin","Cyperus_cyperoides"), type=c("node"))), pch =24, col= 'red', bg = 'red', cex = 1)
+
+nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Bulbostylis_ciliatifolia","Cyperus_cyperoides"), type=c("node"))), pch =24, col= '#61D04F', bg = '#61D04F', cex = 1)
+
+nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Cyperus_compressus","Cyperus_cyperoides"), type=c("node"))), pch =21, col= '#CD0BBC', bg = '#CD0BBC', cex = 1)
+
+
 
 #nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_hystericina","Carex_saxatilis"), type=c("node"))), pch =21, col= 'cyan', bg = 'cyan', cex = 1)
 
