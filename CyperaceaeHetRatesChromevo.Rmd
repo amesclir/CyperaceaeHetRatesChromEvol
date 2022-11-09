@@ -49,14 +49,14 @@ phydataplot(
 
 ### 4. Adding info sihfts in chromosome rates
 nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_longifructus","Carex_erebus"), type=c("node"))), pch =21, col= '#F5C710', bg = '#F5C710', cex = 1)
-nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Kyllingiella_microcephala","Cyperus_cuspidatus"), type=c("node"))), pch =24, col= '#28E2E5', bg = '#28E2E5', cex = 1)
+nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Kyllingiella_microcephala","Cyperus_cuspidatus"), type=c("node"))), pch =21, col= '#28E2E5', bg = '#28E2E5', cex = 1)
 nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_microglochin","Carex_gibba"), type=c("node"))), pch =23, col= '#2297E6', bg = '#2297E6', cex = 1)
 
 nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Carex_microglochin","Cyperus_cyperoides"), type=c("node"))), pch =24, col= 'red', bg = 'red', cex = 1)
 
 nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Bulbostylis_ciliatifolia","Cyperus_cyperoides"), type=c("node"))), pch =24, col= '#61D04F', bg = '#61D04F', cex = 1)
 
-nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Cyperus_compressus","Cyperus_cyperoides"), type=c("node"))), pch =21, col= '#CD0BBC', bg = '#CD0BBC', cex = 1)
+nodelabels(node = as.numeric(findMRCA(mytree, tips=c("Cyperus_compressus","Cyperus_cyperoides"), type=c("node"))), pch =24, col= '#CD0BBC', bg = '#CD0BBC', cex = 1)
 
 
 
